@@ -16,7 +16,7 @@ deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-backports main contrib
 deb https://mirrors.tuna.tsinghua.edu.cn/debian-security bookworm-security main contrib non-free non-free-firmware
 ```
 
-5、更新列表并升级
+3、更新列表并升级
 ```sh
 apt update -y  && apt upgrade -y && apt install -y curl wget sudo nano
 ```
