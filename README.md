@@ -20,4 +20,3 @@ deb https://mirrors.tuna.tsinghua.edu.cn/debian-security bookworm-security main 
 ```sh
 apt update -y  && apt upgrade -y && apt install -y curl wget sudo nano
 ```
-d295e489d2f6415d8013458c1a078a92
