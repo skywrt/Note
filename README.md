@@ -1,5 +1,5 @@
 1、将自带的源文件sources.list备份
-```sh
+```
 cp /etc/apt/sources.list /etc/apt/sources.list_bak
 ```
 
