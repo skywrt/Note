@@ -55,7 +55,7 @@ hanime动漫🔞 H动漫;懂得都懂(萪敩仩蛧)
 https://github.com/xiaohucode/xiangse/raw/main/TV/hanime.xbs
 ```
 
-# 书源
+# 书源合集（未分类）
 ```
 https://github.com/skywrt/Note/blob/main/shuyuan/00%E5%B0%8F%E8%AF%B4%E7%BD%91.xbs
 https://github.com/skywrt/Note/blob/main/shuyuan/36%E4%B9%A6%E6%88%BF%E7%BD%91.xbs
