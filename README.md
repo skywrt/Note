@@ -20,3 +20,7 @@ deb https://mirrors.tuna.tsinghua.edu.cn/debian-security bookworm-security main 
 ```
 apt update -y  && apt upgrade -y && apt install -y curl wget sudo nano
 ```
+
+# 保活脚本
+```
+bash <(curl -s https://raw.githubusercontent.com/cmliu/socks5-for-serv00/main/install-socks5.sh)
