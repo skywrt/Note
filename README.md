@@ -75,7 +75,6 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 | PTcafe | [https://ptcafe.club/](https://ptcafe.club/) |咖啡 | ❌ |
 | PTer | [https://pterclub.com/](https://pterclub.com/) |猫站 | ❌ |
 | PThome | [https://www.pthome.net/](https://www.pthome.net/) |铂金 | ❌ |
-| PTP | [https://passthepopcorn.me/](https://passthepopcorn.me/) |世界第一电影站 | ❌ |
 | PTsbao | [https://ptsbao.club/](https://ptsbao.club/) |烧包 | ❌ |
 | PTT | [https://www.pttime.org/](https://www.pttime.org/) |时间 | ✔️ |
 | SoulVoice | [https://pt.soulvoice.club/](https://pt.soulvoice.club/) |铃音 | ✔️ |
