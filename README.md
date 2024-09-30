@@ -79,7 +79,6 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 | PTT | [https://www.pttime.org/](https://www.pttime.org/) |时间 | ✔️ |
 | SoulVoice | [https://pt.soulvoice.club/](https://pt.soulvoice.club/) |铃音 | ✔️ |
 | SRVFI | [https://srvfi.top/](https://srvfi.top/) |新站 | ❌ |
-| Tik | [https://www.cinematik.net/](https://www.cinematik.net/) |题库 | ❌ |
 | TJUPT | [https://www.tjupt.org/](https://www.tjupt.org/) |北洋，天大教育站 | ❌ |
 | TLFbits | [http://pt.eastgame.org/](http://pt.eastgame.org/) |吐鲁番 | ❌ |
 | TorrentLeech | [https://www.torrentleech.org/](https://www.torrentleech.org/) |0day站 | ❌ |
