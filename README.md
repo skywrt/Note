@@ -30,8 +30,6 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 | ---- | ---- | ---- | ---- |
 | 1PTBA | [https://1ptba.com/](https://1ptba.com/) | 壹PT吧 | ✔️ |
 | 52PT | [https://52pt.site/](https://52pt.site/) | 吾爱PT | ✔️ |
-| ANT | [https://anthelion.me/](https://anthelion.me/) | GZ影视，活跃度较低 | ❌ |
-| avz | [https://avistaz.to/](https://avistaz.to/) | 亚洲影视，较为活跃 | ❌ |
 | Audiences | [https://audiences.me/](https://audiences.me/) | 观众，官组活跃 | ❌ |
 | AZUSA | [https://azusa.ru/](https://azusa.ru/) | 二刺猿相关新站 | ❌ |
 | A-Soul | [https://pt.asf.ink/](https://pt.asf.ink/) |  新小站，经常打不开 | ❌ |
