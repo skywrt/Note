@@ -24,3 +24,7 @@ apt update -y  && apt upgrade -y && apt install -y curl wget sudo nano
 # 保活脚本
 ```
 bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
+
+| 站点           | 链接                                             | 备注    | 注册    |
+|----------------|-----------------------------------------------------|--------------------------------------|-----------|
+| 1PTBA         | https://1ptba.com/        |          壹PT吧    | 和 |
