@@ -29,7 +29,6 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 | 站点 | 链接 | 备注 | 注册 |
 | ---- | ---- | ---- | ---- |
 | 1PTBA | [https://1ptba.com/](https://1ptba.com/) | 壹PT吧 | ✔️ |
-| 1PTBA | [https://1ptba.com/](https://1ptba.com/) |  壹PT吧 | ✔️ |
 | 2xFree | [https://pt.2xfree.org/](https://pt.2xfree.org/) | 2xFree | ❌ |
 | 3Wmg | [https://www.3wmg.com/](https://www.3wmg.com/) | 芒果站 | ❌ |
 | 52PT | [https://52pt.site/](https://52pt.site/) | 吾爱PT | ✔️ |
