@@ -31,7 +31,6 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 | 1PTBA | [https://1ptba.com/](https://1ptba.com/) | 壹PT吧 | ✔️ |
 | 52PT | [https://52pt.site/](https://52pt.site/) | 吾爱PT | ✔️ |
 | Audiences | [https://audiences.me/](https://audiences.me/) | 观众，官组活跃 | ❌ |
-| BTN | [https://broadcasthe.net/](https://broadcasthe.net/) |  鼻涕妞，第一剧集站 | ❌ |
 | BTSchool | [https://pt.btschool.club/](https://pt.btschool.club/) |  学校 | ✔️ |
 | BYR | [https://byr.pt/](https://byr.pt/) | 北邮教育站 | ❌ |
 | CarPt | [https://carpt.net/](https://carpt.net/) |车PT。。 | ✔️ |
