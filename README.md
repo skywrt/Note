@@ -32,7 +32,6 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 | 52PT | [https://52pt.site/](https://52pt.site/) | 吾爱PT | ✔️ |
 | Audiences | [https://audiences.me/](https://audiences.me/) | 观众 | ❌ |
 | BTSchool | [https://pt.btschool.club/](https://pt.btschool.club/) |  学校 | ✔️ |
-| BYR | [https://byr.pt/](https://byr.pt/) | 北邮教育站 | ❌ |
 | CarPt | [https://carpt.net/](https://carpt.net/) |车站 | ✔️ |
 | CMCT | [https://springsunday.net/](https://springsunday.net/) |不可说 | ❌ |
 | CHDBits | [https://ptchdbits.co/](https://ptchdbits.co/) |彩虹岛 | ❌ |
@@ -61,7 +60,6 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 | HDU | [https://pt.hdupt.com/](https://pt.hdupt.com/) |好多油 | ❌ |
 | HDVideo | [https://hdvideo.one/](https://hdvideo.one/) |高清视频 | ❌ |
 | HHClub | [https://hhanclub.top/](https://hhanclub.top/) |憨憨，大聪明 | ✔️ |
-| HITPT | [https://www.hitpt.com/](https://www.hitpt.com/) |百川 | ❌ |
 | ICC | [https://www.icc2022.com/](https://www.icc2022.com/) |冰淇淋 | ❌ |
 | IPT | [https://iptorrents.com/](https://iptorrents.com/) |宇宙第一 | ✔️ |
 | ITZMX | [https://pt.itzmx.com/](https://pt.itzmx.com/) |PT分享站 | ✔️ |
@@ -71,21 +69,16 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 | Oshen | [http://www.oshen.win/](http://www.oshen.win/) |欧神 | ❌ |
 | OurBits | [https://ourbits.club/](https://ourbits.club/) |我堡 | ❌ |
 | Panda | [https://pandapt.net/](https://pandapt.net/) |熊猫站 | ❌ |
-| PigGo | [https://piggo.me/](https://piggo.me/) |猪猪网 | ❌ |
 | PTcafe | [https://ptcafe.club/](https://ptcafe.club/) |咖啡 | ❌ |
 | PTer | [https://pterclub.com/](https://pterclub.com/) |猫站 | ❌ |
 | PThome | [https://www.pthome.net/](https://www.pthome.net/) |铂金 | ❌ |
 | PTsbao | [https://ptsbao.club/](https://ptsbao.club/) |烧包 | ❌ |
 | PTT | [https://www.pttime.org/](https://www.pttime.org/) |时间 | ✔️ |
 | SoulVoice | [https://pt.soulvoice.club/](https://pt.soulvoice.club/) |铃音 | ✔️ |
-| TJUPT | [https://www.tjupt.org/](https://www.tjupt.org/) |北洋园 | ❌ |
 | TLFbits | [http://pt.eastgame.org/](http://pt.eastgame.org/) |吐鲁番 | ❌ |
 | TTG | [https://totheglory.im/](https://totheglory.im/) |听听歌 | ❌ |
-| U2 | [https://u2.dmhy.org/](https://u2.dmhy.org/) |幼儿园 | ❌ |
 | UBits | [https://ubits.club/](https://ubits.club/) |优堡 | ✔️ |
 | UltraHD | [https://ultrahd.net/](https://ultrahd.net/) |高清韩剧 | ❌ |
 | WT-Sakura | [https://wintersakura.net/](https://wintersakura.net/) |冬樱 | ❌ |
 | ZHUQUE | [https://zhuque.in/](https://zhuque.in/) |朱雀 | ✔️ |
 | ZMPT | [https://zmpt.cc/](https://zmpt.cc/) |织梦 | ❌ |
-| 海棠 | [https://www.htpt.cc/](https://www.htpt.cc/) |海棠曲艺园 | ❌ |
-| 红叶 | [https://leaves.red/](https://leaves.red/) |特色有声小说 | ❌ |
