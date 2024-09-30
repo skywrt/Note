@@ -44,9 +44,9 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 | bit-hdtv | [https://www.bit-hdtv.com/](https://www.bit-hdtv.com/) |  乍一看像个NP外站 | ❌ |
 | BLU | [https://blutopia.xyz/](https://blutopia.xyz/) |  高清影视站点，UNIT3D | ❌ |
 | BTN | [https://broadcasthe.net/](https://broadcasthe.net/) |  鼻涕妞，第一剧集站 | ❌ |
-| BTSchool | [https://pt.btschool.club/](https://pt.btschool.club/) |  学校 | ❌ |
+| BTSchool | [https://pt.btschool.club/](https://pt.btschool.club/) |  学校 | ✔️ |
 | BYR | [https://byr.pt/](https://byr.pt/) | 北邮教育站 | ❌ |
-| CarPt | [https://carpt.net/](https://carpt.net/) |车PT。。 | ❌ |
+| CarPt | [https://carpt.net/](https://carpt.net/) |车PT。。 | ✔️ |
 | CG | [http://cinemageddon.net/](http://cinemageddon.net/) |小众低分影视，逼格站 | ❌ |
 | CMCT | [https://springsunday.net/](https://springsunday.net/) |不可说，请进 | ❌ |
 | CHDBits | [https://ptchdbits.co/](https://ptchdbits.co/) |彩虹岛 | ❌ |
@@ -59,7 +59,7 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 | GainB | [https://gainbound.net/](https://gainbound.net/) |丐帮，港视居多 | ❌ |
 | GGPT | [https://www.gamegamept.com/](https://www.gamegamept.com/) |国内游戏站，不了解 | ❌ |
 | GPW | [https://greatposterwall.com/](https://greatposterwall.com/) |海豹，狗屁王，国内GZ影视 | ❌ |
-| HaiDan | [https://www.haidan.video/](https://www.haidan.video/) |海胆 | ❌ |
+| HaiDan | [https://www.haidan.video/](https://www.haidan.video/) |海胆 | ✔️ |
 | HaresClub | [https://club.hares.top/](https://club.hares.top/) |大白兔，4K影视 | ❌ |
 | HD4FANS | [https://pt.hd4fans.org/](https://pt.hd4fans.org/) |兽站，难入 | ❌ |
 | HDArea | [https://hdarea.club/](https://hdarea.club/) |高清地带，好大啊 | ❌ |
@@ -124,7 +124,7 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 | UltraHD | [https://ultrahd.net/](https://ultrahd.net/) |高清韩剧 | ❌ |
 | WT-Sakura | [https://resources.wintersakura.org/](https://resources.wintersakura.org/) |冬樱，新小站 | ❌ |
 | YDY | [https://pt.hdbd.us/](https://pt.hdbd.us/) |伊甸园 | ❌ |
-| ZHUQUE | [https://zhuque.in/](https://zhuque.in/) |新框架，值得期待 | ❌ |
+| ZHUQUE | [https://zhuque.in/](https://zhuque.in/) |新框架，值得期待 | ✔️ |
 | ZMPT | [https://zmpt.cc/](https://zmpt.cc/) |新站，特色刮削？ | ❌ |
 | 海棠 | [https://www.htpt.cc/](https://www.htpt.cc/) |新站，相声等 | ❌ |
 | 红叶 | [https://leaves.red/](https://leaves.red/) |新站，特色有声小说 | ❌ |
