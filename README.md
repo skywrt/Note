@@ -60,7 +60,6 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 | HDTime | [https://hdtime.org/](https://hdtime.org/) |时光 | ❌ |
 | HDU | [https://pt.hdupt.com/](https://pt.hdupt.com/) |好多油 | ❌ |
 | HDVideo | [https://hdvideo.one/](https://hdvideo.one/) |高清视频 | ❌ |
-| HDZone | [https://hdzone.me/](https://hdzone.me/) |高清地带 | ❌ |
 | HHClub | [https://hhanclub.top/](https://hhanclub.top/) |憨憨，大聪明 | ✔️ |
 | HITPT | [https://www.hitpt.com/](https://www.hitpt.com/) |百川 | ❌ |
 | ICC | [https://www.icc2022.com/](https://www.icc2022.com/) |冰淇淋 | ❌ |
