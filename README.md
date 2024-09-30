@@ -88,5 +88,5 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 | ZHUQUE | [https://zhuque.in/](https://zhuque.in/) |朱雀 | ✔️ |
 | ZMPT | [https://zmpt.cc/](https://zmpt.cc/) |织梦 | ❌ |
 | 海棠 | [https://www.htpt.cc/](https://www.htpt.cc/) |海棠曲艺园 | ❌ |
-| 红叶 | [https://leaves.red/](https://leaves.red/) |新站，特色有声小说 | ❌ |
+| 红叶 | [https://leaves.red/](https://leaves.red/) |特色有声小说 | ❌ |
 | 杏林 | [https://xingtan.one/](https://xingtan.one/) |新站，医学等 | ❌ |
