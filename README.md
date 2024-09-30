@@ -31,8 +31,6 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 | 1PTBA | [https://1ptba.com/](https://1ptba.com/) | 壹PT吧 | ✔️ |
 | 52PT | [https://52pt.site/](https://52pt.site/) | 吾爱PT | ✔️ |
 | Audiences | [https://audiences.me/](https://audiences.me/) | 观众，官组活跃 | ❌ |
-| BeiTai | [https://www.beitai.pt/](https://www.beitai.pt/) |  备胎，x265压制 | ❌ |
-| BHD | [https://beyond-hd.me/](https://beyond-hd.me/) |  高清影视站点，UNIT3D | ❌ |
 | bib | [https://bibliotik.me/](https://bibliotik.me/) |  世界第一电子书站 | ❌ |
 | bit-hdtv | [https://www.bit-hdtv.com/](https://www.bit-hdtv.com/) |  乍一看像个NP外站 | ❌ |
 | BLU | [https://blutopia.xyz/](https://blutopia.xyz/) |  高清影视站点，UNIT3D | ❌ |
