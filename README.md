@@ -34,8 +34,7 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 | BTSchool | [https://pt.btschool.club/](https://pt.btschool.club/) |  学校 | ✔️ |
 | BYR | [https://byr.pt/](https://byr.pt/) | 北邮教育站 | ❌ |
 | CarPt | [https://carpt.net/](https://carpt.net/) |车站 | ✔️ |
-| CG | [http://cinemageddon.net/](http://cinemageddon.net/) |小众低分影视，逼格站 | ❌ |
-| CMCT | [https://springsunday.net/](https://springsunday.net/) |不可说，请进 | ❌ |
+| CMCT | [https://springsunday.net/](https://springsunday.net/) |不可说 | ❌ |
 | CHDBits | [https://ptchdbits.co/](https://ptchdbits.co/) |彩虹岛 | ❌ |
 | Cyanbug | [https://cyanbug.net/](https://cyanbug.net/) |大青虫 | ❌ |
 | digitalcore | [https://digitalcore.club/](https://digitalcore.club/) |影视站 | ❌ |
