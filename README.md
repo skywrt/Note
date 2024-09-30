@@ -85,7 +85,6 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 | UBits | [https://ubits.club/](https://ubits.club/) |优堡 | ✔️ |
 | UltraHD | [https://ultrahd.net/](https://ultrahd.net/) |高清韩剧 | ❌ |
 | WT-Sakura | [https://wintersakura.net/](https://wintersakura.net/) |冬樱 | ❌ |
-| YDY | [https://pt.hdbd.us/](https://pt.hdbd.us/) |伊甸园 | ❌ |
 | ZHUQUE | [https://zhuque.in/](https://zhuque.in/) |朱雀 | ✔️ |
 | ZMPT | [https://zmpt.cc/](https://zmpt.cc/) |新站，特色刮削？ | ❌ |
 | 海棠 | [https://www.htpt.cc/](https://www.htpt.cc/) |新站，相声等 | ❌ |
