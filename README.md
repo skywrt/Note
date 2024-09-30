@@ -80,7 +80,6 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 | SoulVoice | [https://pt.soulvoice.club/](https://pt.soulvoice.club/) |铃音 | ✔️ |
 | TJUPT | [https://www.tjupt.org/](https://www.tjupt.org/) |北洋园 | ❌ |
 | TLFbits | [http://pt.eastgame.org/](http://pt.eastgame.org/) |吐鲁番 | ❌ |
-| TorrentLeech | [https://www.torrentleech.org/](https://www.torrentleech.org/) |0day站 | ❌ |
 | TTG | [https://totheglory.im/](https://totheglory.im/) |听听歌 | ❌ |
 | U2 | [https://u2.dmhy.org/](https://u2.dmhy.org/) |幼儿园 | ❌ |
 | UBits | [https://ubits.club/](https://ubits.club/) |国内新站 | ✔️ |
