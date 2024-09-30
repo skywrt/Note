@@ -31,8 +31,6 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 | 1PTBA | [https://1ptba.com/](https://1ptba.com/) | 壹PT吧 | ✔️ |
 | 52PT | [https://52pt.site/](https://52pt.site/) | 吾爱PT | ✔️ |
 | Audiences | [https://audiences.me/](https://audiences.me/) | 观众，官组活跃 | ❌ |
-| AZUSA | [https://azusa.ru/](https://azusa.ru/) | 二刺猿相关新站 | ❌ |
-| A-Soul | [https://pt.asf.ink/](https://pt.asf.ink/) |  新小站，经常打不开 | ❌ |
 | BeiTai | [https://www.beitai.pt/](https://www.beitai.pt/) |  备胎，x265压制 | ❌ |
 | BHD | [https://beyond-hd.me/](https://beyond-hd.me/) |  高清影视站点，UNIT3D | ❌ |
 | bib | [https://bibliotik.me/](https://bibliotik.me/) |  世界第一电子书站 | ❌ |
@@ -51,7 +49,6 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 | Dragon | [https://www.dragonhd.xyz/](https://www.dragonhd.xyz/) |龙之家 | ❌ |
 | FRDS | [https://pt.keepfrds.com/](https://pt.keepfrds.com/) |月月，x265压制 | ❌ |
 | FreeFarm | [https://pt.0ff.cc/](https://pt.0ff.cc/) |自由农场，新小站 | ❌ |
-| GainB | [https://gainbound.net/](https://gainbound.net/) |丐帮，港视居多 | ❌ |
 | GGPT | [https://www.gamegamept.com/](https://www.gamegamept.com/) |国内游戏站，不了解 | ❌ |
 | GPW | [https://greatposterwall.com/](https://greatposterwall.com/) |海豹，狗屁王，国内GZ影视 | ❌ |
 | HaiDan | [https://www.haidan.video/](https://www.haidan.video/) |海胆 | ✔️ |
@@ -76,12 +73,10 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 | HDTime | [https://hdtime.org/](https://hdtime.org/) |高清时光 | ❌ |
 | HDU | [https://pt.hdupt.com/](https://pt.hdupt.com/) |好多油 | ❌ |
 | HDVideo | [https://hdvideo.one/](https://hdvideo.one/) |新小站 | ❌ |
-| HDYu | [https://www.hdyu.top/](https://www.hdyu.top/) |新小站 | ❌ |
 | HDZone | [https://hdzone.me/](https://hdzone.me/) |高清地带？ | ❌ |
 | HHClub | [https://hhanclub.top/](https://hhanclub.top/) |憨憨club，新站 | ✔️ |
 | HITPT | [https://www.hitpt.com/](https://www.hitpt.com/) |百川 | ❌ |
 | ICC | [https://www.icc2022.com/](https://www.icc2022.com/) |ICC | ❌ |
-| iHDBits | [http://ihdbits.me/](http://ihdbits.me/) |国内新站 | ❌ |
 | IPT | [https://iptorrents.com/](https://iptorrents.com/) |宇宙第一，HR长，只适配检索 | ✔️ |
 | ITZMX | [https://pt.itzmx.com/](https://pt.itzmx.com/) |新小站 | ✔️ |
 | iTS | [https://shadowthein.net/](https://shadowthein.net/) |逼格站，曾经PTP跳板 | ❌ |
@@ -92,7 +87,6 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 | MTV | [https://www.morethantv.me/](https://www.morethantv.me/) |曾经剧集站，现在影视 | ❌ |
 | NapQAQ | [https://pt.napqaq.top/](https://pt.napqaq.top/) |新小站 | ❌ |
 | OKPT | [https://www.okpt.net/](https://www.okpt.net/) |国内新站 | ❌ |
-| openlook | [https://openlook.me/](https://openlook.me/) |韩国T站，不了解 | ❌ |
 | Oshen | [http://www.oshen.win/](http://www.oshen.win/) |欧神 | ❌ |
 | OurBits | [https://ourbits.club/](https://ourbits.club/) |我堡 | ❌ |
 | Panda | [https://pandapt.net/](https://pandapt.net/) |熊猫站 | ❌ |
@@ -100,7 +94,6 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 | PTcafe | [https://ptcafe.club/](https://ptcafe.club/) |咖啡，新站 | ❌ |
 | PTer | [https://pterclub.com/](https://pterclub.com/) |猫站，通天下 | ❌ |
 | PThome | [https://www.pthome.net/](https://www.pthome.net/) |铂金 | ❌ |
-| PTNIC | [https://www.ptnic.net/](https://www.ptnic.net/) |小站 | ❌ |
 | PTP | [https://passthepopcorn.me/](https://passthepopcorn.me/) |世界第一电影站 | ❌ |
 | PTsbao | [https://ptsbao.club/](https://ptsbao.club/) |烧包 | ❌ |
 | PTT | [https://www.pttime.org/](https://www.pttime.org/) |5元神站 | ✔️ |
