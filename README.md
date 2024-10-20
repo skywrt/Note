@@ -66,6 +66,7 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 | KuFei | [https://kufei.org/](https://kufei.org/) |库非 | ✔️ |
 | MTeam | [https://kp.m-team.cc/](https://kp.m-team.cc/) |馒头 | ✔️ |
 | OKPT | [https://www.okpt.net/](https://www.okpt.net/) |OKPT | ❌ |
+| OpenCD | [https://open.cd/](https://open.cd/) |皇后 | ❌ |
 | Oshen | [http://www.oshen.win/](http://www.oshen.win/) |欧神 | ❌ |
 | OurBits | [https://ourbits.club/](https://ourbits.club/) |我堡 | ❌ |
 | Panda | [https://pandapt.net/](https://pandapt.net/) |熊猫站 | ❌ |
