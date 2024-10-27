@@ -1,7 +1,7 @@
 # 24h-Streaming
 24小时推流直播
 
-推流的命令
+推流的命令：
 ```
 ffmpeg -re -i 阳光电影www.ygdy8.com.侍神令.2021.HD.1080P.国语中英双字.mp4 -vcodec copy -acodec copy -f flv rtmp://192.168.123.144/live/Skn0AyEtO
 ```
