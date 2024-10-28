@@ -1,15 +1,3 @@
-本文使用「署名 4.0 国际 (CC BY 4.0)」许可协议，欢迎转载、或重新修改使用，但需要注明来源。 [署名 4.0 国际 (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.zh)
-
-本文作者: 苏洋
-
-创建时间: 2024年03月11日
-统计字数: 7282字
-阅读时间: 15分钟阅读
-本文链接: https://soulteary.com/2024/03/11/install-windows-into-a-docker-container.html
-
------
-
-
 # 把 Windows 装进 Docker 容器里
 
 本篇文章聊聊如何在 Docker 里运行 Windows 操作系统， Windows in Docker Container（WinD）。
@@ -308,9 +296,3 @@ environment:
 devices:
   - /dev/bus/usb
 ```
-
-## 最后
-
-本篇文章先聊到这里，下一篇文章见。
-
---EOF
