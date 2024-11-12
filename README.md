@@ -37,7 +37,6 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 | HaresClub | [https://club.hares.top/](https://club.hares.top/) |大白兔 | ❌ |
 | HD4FANS | [https://pt.hd4fans.org/](https://pt.hd4fans.org/) |兽站 | ❌ |
 | HDCity | [https://hdcity.city/](https://hdcity.city/) |城市 | ❌ |
-| HDDolby | [https://www.hddolby.com/](https://www.hddolby.com/) |杜比 | ❌ |
 | HDPost | [https://pt.hdpost.top/](https://pt.hdpost.top/) |普斯特 | ❌ |
 | HDRoute | [http://hdroute.org/](http://hdroute.org/) |不能说 | ❌ |
 | HDU | [https://pt.hdupt.com/](https://pt.hdupt.com/) |好多油 | ❌ |
