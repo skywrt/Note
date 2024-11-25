@@ -46,6 +46,5 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 | Panda | [https://pandapt.net/](https://pandapt.net/) |熊猫站 | ❌ |
 | PTer | [https://pterclub.com/](https://pterclub.com/) |猫站 | ❌ |
 | PTsbao | [https://ptsbao.club/](https://ptsbao.club/) |烧包 | ❌ |
-| TTG | [https://totheglory.im/](https://totheglory.im/) |听听歌 | ❌ |
 | UltraHD | [https://ultrahd.net/](https://ultrahd.net/) |高清韩剧 | ❌ |
 | WT-Sakura | [https://wintersakura.net/](https://wintersakura.net/) |冬樱 | ❌ |
