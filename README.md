@@ -28,7 +28,6 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 
 | 站点 | 链接 | 备注 | 注册 |
 | ---- | ---- | ---- | ---- |
-| CMCT | [https://springsunday.net/](https://springsunday.net/) |不可说 | ❌ |
 | DiscFan | [https://discfan.net/](https://discfan.net/) |碟粉 | ❌ |
 | Dragon | [https://www.dragonhd.xyz/](https://www.dragonhd.xyz/) |龙之家 | ❌ |
 | FreeFarm | [https://pt.0ff.cc/](https://pt.0ff.cc/) |自由农场 | ❌ |
