@@ -41,7 +41,6 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 | HDU | [https://pt.hdupt.com/](https://pt.hdupt.com/) |好多油 | ❌ |
 | HDVideo | [https://hdvideo.one/](https://hdvideo.one/) |高清视频 | ❌ |
 | OKPT | [https://www.okpt.net/](https://www.okpt.net/) |OKPT | ❌ |
-| OpenCD | [https://open.cd/](https://open.cd/) |皇后 | ❌ |
 | Panda | [https://pandapt.net/](https://pandapt.net/) |熊猫站 | ❌ |
 | PTer | [https://pterclub.com/](https://pterclub.com/) |猫站 | ❌ |
 | UltraHD | [https://ultrahd.net/](https://ultrahd.net/) |高清韩剧 | ❌ |
