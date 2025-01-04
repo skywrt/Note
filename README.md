@@ -30,16 +30,13 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 | ---- | ---- | ---- | ---- |
 | Dragon | [https://www.dragonhd.xyz/](https://www.dragonhd.xyz/) |龙之家 | ❌ |
 | FreeFarm | [https://pt.0ff.cc/](https://pt.0ff.cc/) |自由农场 | ❌ |
-| GGPT | [https://www.gamegamept.com/](https://www.gamegamept.com/) |国内游戏站 | ❌ |
 | GPW | [https://greatposterwall.com/](https://greatposterwall.com/) |海豹 | ❌ |
-| HaresClub | [https://club.hares.top/](https://club.hares.top/) |大白兔 | ❌ |
 | HD4FANS | [https://pt.hd4fans.org/](https://pt.hd4fans.org/) |兽站 | ❌ |
 | HDCity | [https://hdcity.city/](https://hdcity.city/) |城市 | ❌ |
 | HDPost | [https://pt.hdpost.top/](https://pt.hdpost.top/) |普斯特 | ❌ |
 | HDRoute | [http://hdroute.org/](http://hdroute.org/) |不能说 | ❌ |
 | HDU | [https://pt.hdupt.com/](https://pt.hdupt.com/) |好多油 | ❌ |
 | HDVideo | [https://hdvideo.one/](https://hdvideo.one/) |高清视频 | ❌ |
-| Panda | [https://pandapt.net/](https://pandapt.net/) |熊猫站 | ❌ |
 | PTer | [https://pterclub.com/](https://pterclub.com/) |猫站 | ❌ |
 | UltraHD | [https://ultrahd.net/](https://ultrahd.net/) |高清韩剧 | ❌ |
 | WT-Sakura | [https://wintersakura.net/](https://wintersakura.net/) |冬樱 | ❌ |
