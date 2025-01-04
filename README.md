@@ -31,7 +31,6 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 | Dragon | [https://www.dragonhd.xyz/](https://www.dragonhd.xyz/) |龙之家 | ❌ |
 | FreeFarm | [https://pt.0ff.cc/](https://pt.0ff.cc/) |自由农场 | ❌ |
 | GPW | [https://greatposterwall.com/](https://greatposterwall.com/) |海豹 | ❌ |
-| HD4FANS | [https://pt.hd4fans.org/](https://pt.hd4fans.org/) |兽站 | ❌ |
 | HDCity | [https://hdcity.city/](https://hdcity.city/) |城市 | ❌ |
 | HDPost | [https://pt.hdpost.top/](https://pt.hdpost.top/) |普斯特 | ❌ |
 | HDRoute | [http://hdroute.org/](http://hdroute.org/) |不能说 | ❌ |
