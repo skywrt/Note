@@ -29,13 +29,9 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 | 站点 | 链接 | 备注 | 注册 |
 | ---- | ---- | ---- | ---- |
 | Dragon | [https://www.dragonhd.xyz/](https://www.dragonhd.xyz/) |龙之家 | ❌ |
-| FreeFarm | [https://pt.0ff.cc/](https://pt.0ff.cc/) |自由农场 | ❌ |
 | GPW | [https://greatposterwall.com/](https://greatposterwall.com/) |海豹 | ❌ |
-| HDCity | [https://hdcity.city/](https://hdcity.city/) |城市 | ❌ |
 | HDPost | [https://pt.hdpost.top/](https://pt.hdpost.top/) |普斯特 | ❌ |
 | HDRoute | [http://hdroute.org/](http://hdroute.org/) |不能说 | ❌ |
-| HDU | [https://pt.hdupt.com/](https://pt.hdupt.com/) |好多油 | ❌ |
 | HDVideo | [https://hdvideo.one/](https://hdvideo.one/) |高清视频 | ❌ |
 | PTer | [https://pterclub.com/](https://pterclub.com/) |猫站 | ❌ |
 | UltraHD | [https://ultrahd.net/](https://ultrahd.net/) |高清韩剧 | ❌ |
-| WT-Sakura | [https://wintersakura.net/](https://wintersakura.net/) |冬樱 | ❌ |
