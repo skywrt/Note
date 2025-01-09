@@ -31,7 +31,6 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 | Dragon | [https://www.dragonhd.xyz/](https://www.dragonhd.xyz/) |龙之家 | ❌ |
 | HDPost | [https://pt.hdpost.top/](https://pt.hdpost.top/) |普斯特 | ❌ |
 | HDRoute | [http://hdroute.org/](http://hdroute.org/) |不能说 | ❌ |
-| HDVideo | [https://hdvideo.one/](https://hdvideo.one/) |高清视频 | ❌ |
 | PTer | [https://pterclub.com/](https://pterclub.com/) |猫站 | ❌ |
 | UltraHD | [https://ultrahd.net/](https://ultrahd.net/) |高清韩剧 | ❌ |
 | HD4FANS | [https://pt.hd4fans.org/](https://pt.hd4fans.org/) |兽站，难入 | ❌ |
