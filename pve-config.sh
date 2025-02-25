@@ -9,18 +9,22 @@ show_menu() {
     echo "====================================="
     echo "1. PVE 存储扩容"
     echo "2. 系统源/仓库源替换"
-    echo "3. 内核版本锁定"
-    echo "4. 开启 SR-IOV 核显虚拟化"
-    echo "5. 一键执行所有配置"
+    echo "3. 查看当前 PVE 版本"
+    echo "4. 内核版本锁定"
+    echo "5. 开启 SR-IOV 核显虚拟化"
+    echo "6. 查看 SR-IOV 核显虚拟化状态"
+    echo "7. 一键执行所有配置"
     echo "0. 退出"
     echo
     read -p "请输入选项数字: " choice
     case $choice in
         1) pve_expand ;;
         2) pve_repo ;;
-        3) kernel_lock ;;
-        4) sriov_config ;;
-        5) all_in_one ;;
+        3) show_pve_version ;;
+        4) kernel_lock ;;
+        5) sriov_config ;;
+        6) check_sriov_status ;;
+        7) all_in_one ;;
         0) exit 0 ;;
         *) echo "无效输入"; sleep 1; show_menu ;;
     esac
@@ -76,6 +80,13 @@ pve_repo() {
     show_menu
 }
 
+show_pve_version() {
+    echo "当前 PVE 版本信息："
+    pveversion
+    read -p "按回车返回主菜单..."
+    show_menu
+}
+
 kernel_lock() {
     echo "正在锁定内核版本..."
     current_kernel=$(uname -r)
@@ -101,7 +112,16 @@ kernel_lock() {
 
 sriov_config() {
     echo "正在配置 SR-IOV 核显虚拟化..."
-    # 修改 GRUB 参数
+    
+    # 提示用户输入 VF 数量，最大值为 7
+    echo "请输入需要开启的 VF 数量（最大值为 7）："
+    read -p "VF 数量（1-7）： " vf_num
+    if ! [[ "$vf_num" =~ ^[1-7]$ ]]; then
+        echo "错误：请输入 1 到 7 之间的数字！"
+        return
+    fi
+    
+    # 修改 GRUB 参数，固定 i915.max_vfs=7
     sed -i '/^GRUB_CMDLINE_LINUX_DEFAULT/c\GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt pcie_acs_override=downstream i915.enable_guc=3 i915.max_vfs=7"' /etc/default/grub
     
     # 加载模块
@@ -126,11 +146,18 @@ sriov_config() {
     dkms install -m i915-sriov-dkms -v $KERNEL -k $(uname -r) --force -j 1
     
     # 配置 VF 数量
-    echo "devices/pci0000:00/0000:00:02.0/sriov_numvfs = 3" > /etc/sysfs.conf
+    echo "devices/pci0000:00/0000:00:02.0/sriov_numvfs = $vf_num" > /etc/sysfs.conf
     
     echo "SR-IOV 配置完成，需要重启生效！"
     read -p "是否立即重启？[y/N] " reboot_choice
     [[ $reboot_choice == [yY] ]] && reboot
+    show_menu
+}
+
+check_sriov_status() {
+    echo "当前 SR-IOV 核显虚拟化状态："
+    lspci | grep VGA
+    read -p "按回车返回主菜单..."
     show_menu
 }
 
