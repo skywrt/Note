@@ -81,7 +81,7 @@ services:
 ### 4. 启动服务
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 首次启动可能需要等待数秒钟到 1 分钟，取决于网络和系统资源。
