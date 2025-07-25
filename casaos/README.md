@@ -15,3 +15,4 @@ sudo casaos_docker_reconfig.sh
 
 请执行以下命令验证新配置已生效：
 docker info | grep 'Docker Root Dir'
+
