@@ -5,8 +5,9 @@
 <p align="center">
     <img src="/casaos/casaos.png" alt="Logo" width="600" />
 
-我们把这docker的一键转移批处理下载过来，文件的全名为casaos_docker_reconfig.sh
-然后把脚本复制到 /usr/bin/ 这目录下
+使用命令把脚本下载到 /usr/bin/ 这目录下
+sudo curl -o /usr/bin/casaos_docker_reconfig.sh https://gh-proxy.com/raw.githubusercontent.com/skywrt/Note/main/casaos/casaos_docker_reconfig.sh
+
 执行命令，给脚本授权
 sudo chmod +x /usr/bin/casaos_docker_reconfig.sh
 
