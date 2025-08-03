@@ -14,7 +14,7 @@ services:
     ports:
       - "8043:80"
     volumes:
-      - /mnt/user/appdata/byte-muse:/data
+      - /docker/byte-muse:/data
   # 若需要开启图书馆榜单,可自行部署如下服务。并于byte-muse项目中配置bypass_url
   cloudflarebypass:
     image: ghcr.io/sarperavci/cloudflarebypassforscraping:latest
