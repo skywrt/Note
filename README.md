@@ -28,13 +28,13 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 # NAS-Tools 一键部署脚本
 
 1.  **准备工作**
-    * 确保你的 NAS 已安装 Docker。
-    * 通过 SSH 登录到你的 NAS。
+    * 确保你的设备已安装 Docker。
+    * 通过 SSH 登录到你的设备。
 
 2.  **下载并执行脚本**
-    将本脚本文件下载到你的 NAS 任意目录，例如 `/volume1/docker/`。
+    将本脚本文件下载到你的设备任意目录，例如 `/volume1/docker/`。
     
-    你也可以使用 `curl` 命令直接下载并运行：
+    你也可以在设备安装路径下，使用 `curl` 命令直接下载并运行：
 
     ```bash
     curl -fsSL https://raw.githubusercontent.com/skywrt/Note/main/NasTool.sh -o NasTool.sh && chmod +x NasTool.sh && ./NasTool.sh
