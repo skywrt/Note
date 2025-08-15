@@ -20,6 +20,7 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 
     ```
 ❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌
+
 1、将自带的源文件sources.list备份
 ```
 cp /etc/apt/sources.list /etc/apt/sources.list_bak
