@@ -40,3 +40,13 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
     curl -fsSL https://raw.githubusercontent.com/skywrt/Note/main/NasTool.sh -o NasTool.sh && chmod +x NasTool.sh && ./NasTool.sh
 
     ```
+
+    ```bash
+    https://pastebin.com/raw/aVaQ1fFc
+
+    ```
+    
+    ```bash
+    https://gist.githubusercontent.com/skywrt/320937e7783be1d88d32cdfd9a98214c/raw/e3060aaa6528b4fdb220d368ff1948c4b66b84a6/config.txt
+
+    ```
