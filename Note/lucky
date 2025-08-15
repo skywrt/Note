@@ -1,0 +1,645 @@
+// ==UserScript==
+// @name         hhanclub自动抽奖
+// @namespace    http://tampermonkey.net/
+// @version      1.1
+// @description  自动执行hhanclub抽奖
+// @author       Timi
+// @match        https://hhanclub.top/lucky.php
+// @grant        none
+// @icon         https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAKEE2ie35c8Z7uFMM3o7kGs8JLlxdoAA-EZAAKUwPlULub89nlMf6Y2BA.ico
+// @run-at       document-ready
+// @license      MIT
+ 
+// ==/UserScript==
+ 
+(function() {
+    'use strict';
+ 
+    // 抽奖API配置
+    const LOTTERY_API = 'https://hhanclub.top/plugin/lucky-draw';
+ 
+    // 创建控制面板
+    function createControlPanel() {
+        const panel = document.createElement('div');
+        panel.id = 'lottery-control-panel';
+        panel.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 320px;
+            min-width: 280px;
+            max-width: 500px;
+            min-height: 200px;
+            background: #fff;
+            border: 2px solid #007bff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 10000;
+            font-family: Arial, sans-serif;
+            padding: 15px;
+            resize: both;
+            overflow: auto;
+        `;
+ 
+        panel.innerHTML = `
+            <div style="text-align: center; margin-bottom: 15px;">
+                <h3 style="margin: 0; color: #007bff;">🎲 自动抽奖工具</h3>
+            </div>
+            <div style="margin-bottom: 10px; padding: 8px; background: #f8f9fa; border-radius: 4px; font-size: 12px;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span>💰 憨豆余额: <span id="bean-balance" style="color: #28a745; font-weight: bold;">检测中...</span></span>
+                </div>
+                <div style="margin-top: 5px; display: flex; justify-content: space-between; align-items: center;">
+                    <span>🎯 单次消耗: <span style="color: #dc3545;">2000</span></span>
+                    <span>📊 最多可抽: <span id="max-possible" style="color: #007bff; font-weight: bold;">-</span> 次</span>
+                </div>
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label>抽奖间隔 (秒):</label>
+                <input type="number" id="lottery-interval" value="8" min="3" max="300" style="width: 60px; margin-left: 10px;">
+                <span style="font-size: 11px; color: #666; margin-left: 5px;">实际: <span id="current-interval">8</span>s</span>
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label>最大抽奖次数:</label>
+                <input type="number" id="max-lottery-count" value="10" min="1" max="1000" style="width: 60px; margin-left: 10px;">
+                <button id="set-max-possible" style="background: #17a2b8; color: white; border: none; padding: 4px 8px; border-radius: 3px; font-size: 11px; margin-left: 5px; cursor: pointer;">设为最大</button>
+            </div>
+            <div style="text-align: center; margin-bottom: 15px;">
+                <button id="start-lottery" style="background: #28a745; color: white; border: none; padding: 8px 15px; border-radius: 4px; margin-right: 5px; cursor: pointer;">开始抽奖</button>
+                <button id="stop-lottery" style="background: #dc3545; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer;" disabled>停止抽奖</button>
+            </div>
+            <div style="border-top: 1px solid #eee; padding-top: 10px;">
+                <div style="font-size: 12px; color: #666;">
+                    状态: <span id="lottery-status" style="color: #28a745;">等待开始</span>
+                </div>
+                <div style="font-size: 12px; color: #666; margin-top: 5px;">
+                    已抽奖: <span id="lottery-count">0</span> 次 | 中奖: <span id="win-count">0</span> 次 | 消耗: <span id="cost-beans">0</span> 憨豆
+                </div>
+                <div style="font-size: 12px; margin-top: 5px;">
+                    <span style="color: #666;">盈亏: </span>
+                    <span id="profit-loss" style="font-weight: bold;">-</span> 憨豆
+                    <span style="color: #666; margin-left: 10px;">盈亏率: </span>
+                    <span id="profit-rate" style="font-weight: bold;">-</span>
+                </div>
+                <div id="prize-stats" style="font-size: 11px; color: #666; margin-top: 5px; display: none; position: relative;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                        <strong>🎁 奖品统计</strong>
+                        <button id="toggle-detailed-stats" style="background: #6c757d; color: white; border: none; padding: 2px 6px; border-radius: 2px; font-size: 10px; cursor: pointer;">详细</button>
+                    </div>
+                    <div id="summary-stats" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-bottom: 5px; font-size: 10px;">
+                        <div>💰 获得憨豆: <span id="total-beans-won" style="color: #28a745; font-weight: bold;">0</span></div>
+                        <div>📧 邀请数: <span id="total-invites" style="color: #007bff; font-weight: bold;">0</span></div>
+                        <div>🌈 彩虹ID: <span id="total-rainbow-days" style="color: #e83e8c; font-weight: bold;">0</span>天</div>
+                        <div>🎫 VIP: <span id="total-vip-days" style="color: #fd7e14; font-weight: bold;">0</span>天</div>
+                        <div>📝 补签卡: <span id="total-makeup-cards" style="color: #6f42c1; font-weight: bold;">0</span>个</div>
+                        <div>⬆️ 上传量: <span id="total-upload" style="color: #20c997; font-weight: bold;">0</span>GB</div>
+                    </div>
+                    <div id="detailed-prize-list" style="max-height: 80px; overflow-y: auto; margin-top: 3px; border: 1px solid #ddd; border-radius: 3px; padding: 3px; resize: both; min-height: 40px; display: none;"></div>
+                </div>
+                <div id="lottery-log" style="max-height: 150px; overflow-y: auto; background: #f8f9fa; padding: 5px; border-radius: 4px; font-size: 11px; margin-top: 10px; display: none;">
+                </div>
+            </div>
+        `;
+ 
+        document.body.appendChild(panel);
+        console.log('控制面板已添加:', document.getElementById('lottery-control-panel'));
+        return panel;
+    }
+ 
+    // 获取憨豆余额
+    function getBeanBalance() {
+        const beanElement = document.querySelector('.bean-number');
+        if (!beanElement) {
+            console.error('未找到憨豆余额元素 (.bean-number)');
+            addLog('❌ 无法获取憨豆余额', 'error');
+            return 0;
+        }
+        const balance = parseFloat(beanElement.textContent.trim());
+        return isNaN(balance) ? 0 : balance;
+    }
+ 
+    // 更新余额显示
+    function updateBalanceDisplay() {
+        const balance = getBeanBalance();
+        const maxPossible = Math.floor(balance / 2000);
+ 
+        const beanBalanceElement = document.getElementById('bean-balance');
+        const maxPossibleElement = document.getElementById('max-possible');
+        const startButton = document.getElementById('start-lottery');
+ 
+        if (beanBalanceElement && maxPossibleElement && startButton) {
+            beanBalanceElement.textContent = balance.toLocaleString();
+            maxPossibleElement.textContent = maxPossible.toLocaleString();
+ 
+            if (balance < 2000) {
+                startButton.disabled = true;
+                startButton.textContent = '余额不足';
+                startButton.style.background = '#6c757d';
+            } else {
+                startButton.disabled = false;
+                startButton.textContent = '开始抽奖';
+                startButton.style.background = '#28a745';
+            }
+        } else {
+            console.error('余额显示元素未找到');
+            addLog('❌ 余额显示元素未加载', 'error');
+        }
+ 
+        return maxPossible;
+    }
+ 
+    // 解码Unicode字符串
+    function decodeUnicode(str) {
+        try {
+            return str.replace(/\\u[\dA-F]{4}/gi, function(match) {
+                return String.fromCharCode(parseInt(match.replace(/\\u/g, ''), 16));
+            });
+        } catch (error) {
+            return str;
+        }
+    }
+ 
+    // 执行单次抽奖
+    async function performLottery() {
+        try {
+            const response = await fetch(LOTTERY_API, {
+                method: 'POST',
+                headers: {
+                    'accept': '*/*',
+                    'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
+                    'content-length': '0',
+                    'origin': 'https://hhanclub.top',
+                    'priority': 'u=1, i',
+                    'referer': 'https://hhanclub.top/lucky.php',
+                    'sec-ch-ua': '"Not;A=Brand";v="99", "Microsoft Edge";v="139", "Chromium";v="139"',
+                    'sec-ch-ua-arch': 'x86',
+                    'sec-ch-ua-bitness': '64',
+                    'sec-ch-ua-mobile': '?0',
+                    'sec-ch-ua-platform': 'Windows',
+                    'sec-fetch-dest': 'empty',
+                    'sec-fetch-mode': 'cors',
+                    'sec-fetch-site': 'same-origin',
+                    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0',
+                    'x-requested-with': 'XMLHttpRequest'
+                }
+            });
+ 
+            const resultText = await response.text();
+ 
+            let parsedResult = null;
+            try {
+                parsedResult = JSON.parse(resultText);
+            } catch (e) {
+                // 如果不是JSON格式，保持原文本
+            }
+ 
+            return {
+                success: response.ok,
+                status: response.status,
+                data: resultText,
+                parsed: parsedResult
+            };
+        } catch (error) {
+            return {
+                success: false,
+                error: error.message
+            };
+        }
+    }
+ 
+    // 添加日志
+    function addLog(message, type = 'info') {
+        const logContainer = document.getElementById('lottery-log');
+        if (!logContainer) {
+            console.error('日志容器未找到');
+            return;
+        }
+        logContainer.style.display = 'block';
+ 
+        const timestamp = new Date().toLocaleTimeString();
+        const logEntry = document.createElement('div');
+ 
+        let color = '#666';
+        switch(type) {
+            case 'error': color = '#dc3545'; break;
+            case 'success': color = '#28a745'; break;
+            case 'warning': color = '#ffc107'; break;
+            case 'info':
+            default: color = '#666'; break;
+        }
+ 
+        logEntry.style.cssText = `margin-bottom: 3px; color: ${color};`;
+        logEntry.textContent = `[${timestamp}] ${message}`;
+ 
+        logContainer.appendChild(logEntry);
+        logContainer.scrollTop = logContainer.scrollHeight;
+ 
+        if (logContainer.children.length > 20) {
+            logContainer.removeChild(logContainer.firstChild);
+        }
+    }
+ 
+    // 奖品统计
+    let prizeStats = {};
+    let winCount = 0;
+    let totalCost = 0;
+    let totalBeansWon = 0;
+    let totalInvites = 0;
+    let totalRainbowDays = 0;
+    let totalVipDays = 0;
+    let totalMakeupCards = 0;
+    let totalUploadGB = 0;
+ 
+    // 解析奖品内容
+    function parsePrizeText(prizeText) {
+        const result = {
+            type: 'unknown',
+            name: prizeText,
+            value: 0,
+            unit: ''
+        };
+ 
+        if (prizeText.includes('魔力') || prizeText.includes('憨豆')) {
+            const match = prizeText.match(/(\d+)/);
+            if (match) {
+                result.type = 'beans';
+                result.value = parseInt(match[1]);
+                result.name = '憨豆';
+                result.unit = '';
+            }
+        }
+        else if (prizeText.includes('邀请')) {
+            const match = prizeText.match(/(\d+)/);
+            if (match) {
+                result.type = 'invite';
+                result.value = parseInt(match[1]);
+                result.name = '邀请';
+                result.unit = '';
+            }
+        }
+        else if (prizeText.includes('彩虹')) {
+            const match = prizeText.match(/(\d+)/);
+            if (match) {
+                result.type = 'rainbow';
+                result.value = parseInt(match[1]);
+                result.name = '彩虹ID';
+                result.unit = '天';
+            }
+        }
+        else if (prizeText.includes('VIP')) {
+            const match = prizeText.match(/(\d+)/);
+            if (match) {
+                result.type = 'vip';
+                result.value = parseInt(match[1]);
+                result.name = 'VIP';
+                result.unit = '天';
+            }
+        }
+        else if (prizeText.includes('补签卡')) {
+            const match = prizeText.match(/(\d+)/);
+            if (match) {
+                result.type = 'makeup';
+                result.value = parseInt(match[1]);
+                result.name = '补签卡';
+                result.unit = '个';
+            }
+        }
+        else if (prizeText.includes('上传量')) {
+            const match = prizeText.match(/(\d+(?:\.\d+)?)\s*GB/);
+            if (match) {
+                result.type = 'upload';
+                result.value = parseFloat(match[1]);
+                result.name = '上传量';
+                result.unit = 'GB';
+            }
+        }
+ 
+        return result;
+    }
+ 
+    // 更新奖品统计
+    function updatePrizeStats(prizeText) {
+        winCount++;
+        document.getElementById('win-count').textContent = winCount;
+ 
+        const prize = parsePrizeText(prizeText);
+ 
+        switch(prize.type) {
+            case 'beans':
+                totalBeansWon += prize.value;
+                document.getElementById('total-beans-won').textContent = totalBeansWon.toLocaleString();
+                break;
+            case 'invite':
+                totalInvites += prize.value;
+                document.getElementById('total-invites').textContent = totalInvites.toLocaleString();
+                break;
+            case 'rainbow':
+                totalRainbowDays += prize.value;
+                document.getElementById('total-rainbow-days').textContent = totalRainbowDays.toLocaleString();
+                break;
+            case 'vip':
+                totalVipDays += prize.value;
+                document.getElementById('total-vip-days').textContent = totalVipDays.toLocaleString();
+                break;
+            case 'makeup':
+                totalMakeupCards += prize.value;
+                document.getElementById('total-makeup-cards').textContent = totalMakeupCards.toLocaleString();
+                break;
+            case 'upload':
+                totalUploadGB += prize.value;
+                document.getElementById('total-upload').textContent = totalUploadGB.toLocaleString();
+                break;
+        }
+ 
+        if (prizeStats[prizeText]) {
+            prizeStats[prizeText]++;
+        } else {
+            prizeStats[prizeText] = 1;
+        }
+ 
+        updateProfitLoss();
+        document.getElementById('prize-stats').style.display = 'block';
+        updateDetailedPrizeList();
+    }
+ 
+    // 更新盈亏计算
+    function updateProfitLoss() {
+        const profit = totalBeansWon - totalCost;
+        const profitElement = document.getElementById('profit-loss');
+        const rateElement = document.getElementById('profit-rate');
+ 
+        if (profitElement && rateElement) {
+            profitElement.textContent = profit.toLocaleString();
+            if (profit > 0) {
+                profitElement.style.color = '#28a745';
+                profitElement.textContent = '+' + profit.toLocaleString();
+            } else if (profit < 0) {
+                profitElement.style.color = '#dc3545';
+            } else {
+                profitElement.style.color = '#666';
+            }
+ 
+            if (totalCost > 0) {
+                const rate = (profit / totalCost * 100).toFixed(1);
+                rateElement.textContent = rate + '%';
+                if (parseFloat(rate) > 0) {
+                    rateElement.style.color = '#28a745';
+                } else if (parseFloat(rate) < 0) {
+                    rateElement.style.color = '#dc3545';
+                } else {
+                    rateElement.style.color = '#666';
+                }
+            } else {
+                rateElement.textContent = '-';
+                rateElement.style.color = '#666';
+            }
+        }
+    }
+ 
+    // 更新详细奖品列表
+    function updateDetailedPrizeList() {
+        const prizeList = document.getElementById('detailed-prize-list');
+        if (!prizeList) return;
+ 
+        prizeList.innerHTML = '';
+        Object.entries(prizeStats)
+            .sort((a, b) => b[1] - a[1])
+            .forEach(([prize, count]) => {
+                const item = document.createElement('div');
+                item.textContent = `${prize}: ${count}次`;
+                item.style.cssText = 'margin: 1px 0; padding: 1px 3px; background: #e9ecef; border-radius: 2px;';
+                prizeList.appendChild(item);
+            });
+    }
+ 
+    // 更新消耗统计
+    function updateCostStats() {
+        totalCost += 2000;
+        document.getElementById('cost-beans').textContent = totalCost.toLocaleString();
+        updateProfitLoss();
+        setTimeout(updateBalanceDisplay, 100);
+    }
+ 
+    // 主控制逻辑
+    let lotteryInterval = null;
+    let lotteryCount = 0;
+    let consecutiveErrors = 0;
+    let dynamicInterval = 8000;
+ 
+    function startLottery() {
+        const intervalInput = document.getElementById('lottery-interval');
+        const maxCountInput = document.getElementById('max-lottery-count');
+ 
+        if (!intervalInput || !maxCountInput) {
+            addLog('❌ 控制面板未正确加载，无法开始抽奖', 'error');
+            console.error('缺少必要的输入元素:', { intervalInput, maxCountInput });
+            return;
+        }
+ 
+        const maxCount = parseInt(maxCountInput.value) || 10;
+        dynamicInterval = parseInt(intervalInput.value) * 1000 || 8000;
+ 
+        lotteryCount = 0;
+        winCount = 0;
+        totalCost = 0;
+        consecutiveErrors = 0;
+        prizeStats = {};
+        totalBeansWon = 0;
+        totalInvites = 0;
+        totalRainbowDays = 0;
+        totalVipDays = 0;
+        totalMakeupCards = 0;
+        totalUploadGB = 0;
+ 
+        document.getElementById('lottery-count').textContent = '0';
+        document.getElementById('win-count').textContent = '0';
+        document.getElementById('cost-beans').textContent = '0';
+        document.getElementById('current-interval').textContent = dynamicInterval / 1000;
+        document.getElementById('prize-stats').style.display = 'none';
+ 
+        document.getElementById('total-beans-won').textContent = '0';
+        document.getElementById('total-invites').textContent = '0';
+        document.getElementById('total-rainbow-days').textContent = '0';
+        document.getElementById('total-vip-days').textContent = '0';
+        document.getElementById('total-makeup-cards').textContent = '0';
+        document.getElementById('total-upload').textContent = '0';
+        document.getElementById('profit-loss').textContent = '-';
+        document.getElementById('profit-rate').textContent = '-';
+ 
+        document.getElementById('lottery-status').textContent = '运行中...';
+        document.getElementById('lottery-status').style.color = '#ffc107';
+        document.getElementById('start-lottery').disabled = true;
+        document.getElementById('stop-lottery').disabled = false;
+ 
+        addLog(`🚀 开始自动抽奖，基础间隔: ${dynamicInterval/1000}秒，最大次数: ${maxCount}`, 'info');
+ 
+        performSingleLottery(maxCount);
+        lotteryInterval = setInterval(() => {
+            performSingleLottery(maxCount);
+        }, dynamicInterval);
+    }
+ 
+    // 执行单次抽奖
+    async function performSingleLottery(maxCount) {
+        if (lotteryCount >= maxCount) {
+            stopLottery();
+            addLog(`🎯 达到最大抽奖次数 (${maxCount})，自动停止`, 'info');
+            return;
+        }
+ 
+        lotteryCount++;
+        document.getElementById('lottery-count').textContent = lotteryCount;
+ 
+        addLog(`🎯 执行第 ${lotteryCount} 次抽奖... (间隔: ${dynamicInterval/1000}s)`, 'info');
+ 
+        const result = await performLottery();
+ 
+        if (result.success && result.parsed) {
+            const data = result.parsed;
+ 
+            if (data.ret === 0) {
+                consecutiveErrors = 0;
+                dynamicInterval = parseInt(document.getElementById('lottery-interval')?.value || 8) * 1000;
+                document.getElementById('current-interval').textContent = dynamicInterval / 1000;
+ 
+                if (lotteryInterval) {
+                    clearInterval(lotteryInterval);
+                    lotteryInterval = setInterval(() => {
+                        performSingleLottery(maxCount);
+                    }, dynamicInterval);
+                }
+ 
+                const prizeText = decodeUnicode(data.data.prize_text || '未知奖品');
+                const recordId = data.data.winning_record_id || '';
+ 
+                addLog(`🎉 恭喜！抽中了: ${prizeText} (记录ID: ${recordId})`, 'success');
+ 
+                updatePrizeStats(prizeText);
+                updateCostStats();
+ 
+            } else if (data.ret === -1) {
+                const errorMsg = decodeUnicode(data.msg || '未知错误');
+ 
+                if (errorMsg.includes('重复点击') || errorMsg.includes('请稍后')) {
+                    consecutiveErrors++;
+                    if (consecutiveErrors >= 3) {
+                        dynamicInterval = Math.min(dynamicInterval * 1.5, 30000);
+                        document.getElementById('current-interval').textContent = Math.round(dynamicInterval / 1000);
+                        addLog(`⚠️ ${errorMsg}，已调整间隔至 ${Math.round(dynamicInterval/1000)} 秒`, 'warning');
+ 
+                        if (lotteryInterval) {
+                            clearInterval(lotteryInterval);
+                            lotteryInterval = setInterval(() => {
+                                performSingleLottery(maxCount);
+                            }, dynamicInterval);
+                        }
+                    } else {
+                        addLog(`⚠️ ${errorMsg}，将在下次继续尝试 (${consecutiveErrors}/3)`, 'warning');
+                    }
+                } else if (errorMsg.includes('次数') || errorMsg.includes('用完') || errorMsg.includes('余额不足')) {
+                    addLog(`❌ ${errorMsg}，已停止抽奖`, 'error');
+                    stopLottery();
+                    return;
+                } else {
+                    consecutiveErrors++;
+                    addLog(`❌ ${errorMsg} (${consecutiveErrors}/3)`, 'error');
+                    updateCostStats();
+                }
+            } else {
+                consecutiveErrors++;
+                addLog(`⚠️ 未知响应状态: ret=${data.ret}, msg=${decodeUnicode(data.msg || '')}`, 'warning');
+                updateCostStats();
+            }
+        } else if (result.success) {
+            addLog(`✅ 抽奖完成，响应: ${result.data.substring(0, 100)}...`, 'success');
+            consecutiveErrors = 0;
+        } else {
+            consecutiveErrors++;
+            addLog(`❌ 请求失败: ${result.error || result.status} (${consecutiveErrors}/3)`, 'error');
+        }
+    }
+ 
+    function stopLottery() {
+        if (lotteryInterval) {
+            clearInterval(lotteryInterval);
+            lotteryInterval = null;
+        }
+ 
+        document.getElementById('lottery-status').textContent = '已停止';
+        document.getElementById('lottery-status').style.color = '#dc3545';
+        document.getElementById('start-lottery').disabled = false;
+        document.getElementById('stop-lottery').disabled = true;
+ 
+        const baseInterval = parseInt(document.getElementById('lotmechanized infantry-interval')?.value || 8);
+        document.getElementById('current-interval').textContent = baseInterval;
+ 
+        addLog('🛑 抽奖已停止', 'info');
+    }
+ 
+    // 初始化
+    function init() {
+        const panel = createControlPanel();
+        if (!panel || !document.getElementById('lottery-control-panel')) {
+            console.error('控制面板创建失败');
+            addLog('❌ 控制面板创建失败', 'error');
+            return;
+        }
+ 
+        document.getElementById('start-lottery').addEventListener('click', startLottery);
+        document.getElementById('stop-lottery').addEventListener('click', stopLottery);
+ 
+        document.getElementById('set-max-possible').addEventListener('click', () => {
+            const maxPossible = updateBalanceDisplay();
+            document.getElementById('max-lottery-count').value = maxPossible;
+        });
+ 
+        document.getElementById('toggle-detailed-stats').addEventListener('click', () => {
+            const detailedList = document.getElementById('detailed-prize-list');
+            const button = document.getElementById('toggle-detailed-stats');
+ 
+            if (detailedList.style.display === 'none') {
+                detailedList.style.display = 'block';
+                button.textContent = '隐藏';
+            } else {
+                detailedList.style.display = 'none';
+                button.textContent = '详细';
+            }
+        });
+ 
+        let isDragging = false;
+        let dragOffset = { x: 0, y: 0 };
+ 
+        const titleBar = panel.querySelector('h3').parentElement;
+        titleBar.style.cursor = 'move';
+        titleBar.style.userSelect = 'none';
+ 
+        titleBar.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            dragOffset.x = e.clientX - panel.offsetLeft;
+            dragOffset.y = e.clientY - panel.offsetTop;
+        });
+ 
+        document.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                panel.style.left = (e.clientX - dragOffset.x) + 'px';
+                panel.style.top = (e.clientY - dragOffset.y) + 'px';
+                panel.style.right = 'auto';
+            }
+        });
+ 
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+ 
+        console.log('🎲 hhanclub自动抽奖脚本已加载！');
+        updateBalanceDisplay();
+        setInterval(updateBalanceDisplay, 10000);
+        addLog('脚本已就绪，点击开始抽奖将立即执行第一次抽奖！支持详细奖品统计和盈亏分析', 'success');
+    }
+ 
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
