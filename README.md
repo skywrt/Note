@@ -1,9 +1,4 @@
 ```bash
-https://pastebin.com/raw/aVaQ1fFc
-
-```
-    
-```bash
 https://gist.githubusercontent.com/skywrt/320937e7783be1d88d32cdfd9a98214c/raw/e3060aaa6528b4fdb220d368ff1948c4b66b84a6/config.txt
 
 ```
