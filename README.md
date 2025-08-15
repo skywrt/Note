@@ -1,7 +1,9 @@
+❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌
 # 保活脚本
 ```
 bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 ```
+❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌
 # NAS-Tools 一键部署脚本
 
 1.  **准备工作**
@@ -17,9 +19,7 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
     curl -fsSL https://raw.githubusercontent.com/skywrt/Note/main/NasTool.sh -o NasTool.sh && chmod +x NasTool.sh && ./NasTool.sh
 
     ```
-
 ❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌
-
 1、将自带的源文件sources.list备份
 ```
 cp /etc/apt/sources.list /etc/apt/sources.list_bak
