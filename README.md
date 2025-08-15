@@ -1,3 +1,14 @@
+    ```bash
+    https://pastebin.com/raw/aVaQ1fFc
+
+    ```
+    
+    ```bash
+    https://gist.githubusercontent.com/skywrt/320937e7783be1d88d32cdfd9a98214c/raw/e3060aaa6528b4fdb220d368ff1948c4b66b84a6/config.txt
+
+    ```
+
+
 1、将自带的源文件sources.list备份
 ```
 cp /etc/apt/sources.list /etc/apt/sources.list_bak
@@ -38,15 +49,5 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 
     ```bash
     curl -fsSL https://raw.githubusercontent.com/skywrt/Note/main/NasTool.sh -o NasTool.sh && chmod +x NasTool.sh && ./NasTool.sh
-
-    ```
-
-    ```bash
-    https://pastebin.com/raw/aVaQ1fFc
-
-    ```
-    
-    ```bash
-    https://gist.githubusercontent.com/skywrt/320937e7783be1d88d32cdfd9a98214c/raw/e3060aaa6528b4fdb220d368ff1948c4b66b84a6/config.txt
 
     ```
