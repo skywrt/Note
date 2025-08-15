@@ -18,7 +18,7 @@ bash <(curl -s https://raw.githubusercontent.com/skywrt/Note/main/check_cron.sh)
 
     ```
 
----------------------------------------------------------------------------------------------------------
+###############################################################################################################
 
 1、将自带的源文件sources.list备份
 ```
@@ -42,7 +42,7 @@ deb https://mirrors.tuna.tsinghua.edu.cn/debian-security bookworm-security main 
 ```
 apt update -y  && apt upgrade -y && apt install -y curl wget sudo nano
 ```
----------------------------------------------------------------------------------------------------------
+###############################################################################################################
 ```bash
 https://gist.githubusercontent.com/skywrt/320937e7783be1d88d32cdfd9a98214c/raw/e3060aaa6528b4fdb220d368ff1948c4b66b84a6/config.txt
 
