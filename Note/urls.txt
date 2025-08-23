@@ -1,7 +1,7 @@
 # 订阅链接列表
-https://raw.githubusercontent.com/WLget/V2Ray_configs_64/master/ConfigSub_list.txt
-https://raw.githubusercontent.com/jianguogongyong/ssr_subscrible_tool/refs/heads/master/node.txt
-https://raw.githubusercontent.com/jgchengxin/ssr_subscrible_tool/refs/heads/master/node.txt
-https://raw.githubusercontent.com/dl250/dl250/refs/heads/master/node.txt
+https://raw.githubusercontent.com/moneyfly1/jichangnodes/main/trial
+https://raw.githubusercontent.com/moneyfly1/666/main/trial
+https://raw.githubusercontent.com/moneyfly1/highnodes/main/data/v2ray.txt
+https://raw.githubusercontent.com/moneyfly1/collectSub/main/output/all.txt
 
 # 注释行以 # 开头，会被自动忽略
